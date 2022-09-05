@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<% if @vehicle_report.csv_reports.attached? %>
+  <% @vehicle_report.csv_reports.each do |attachment| %>
+    <% if attachment.image? %>
+      <%= image_tag attachment, width: "200px" %>
+    <% else %>
+      <%= link_to attachment.filename, rails_blob_path(attachment, disposition: "attachment") %>
+    <%end%>
+  <%end%>
+<%end%>
+
+<div>
+  <%= link_to "Edit this vehicle report", edit_vehicle_report_path(@vehicle_report) %> |
+  <%= link_to "Back to vehicle reports", vehicle_reports_path %>
+
+  <%= button_to "Destroy this vehicle report", @vehicle_report, method: :delete %>
+</div>

@@ -1,0 +1,22 @@
+<%= form_with(model: vehicle_report) do |form| %>
+  <% if vehicle_report.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(vehicle_report.errors.count, "error") %> prohibited this vehicle_report from being saved:</h2>
+
+      <ul>
+        <% vehicle_report.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :csv_reports_upload %> <br>
+    <%= form.file_field :csv_reports, multiple: true, direct_upload: true %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

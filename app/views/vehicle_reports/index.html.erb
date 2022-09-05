@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Vehicle reports</h1>
+
+<div id="vehicle_reports">
+  <% @vehicle_reports.each do |vehicle_report| %>
+    Vehicle files uploaded on <%= vehicle_report.created_at %>
+    <p>
+      <%= link_to "Show this vehicle report", vehicle_report %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New vehicle report", new_vehicle_report_path %>
