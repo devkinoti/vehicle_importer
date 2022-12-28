@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+to do
+compound primary key vehicle_id + inspection_date - change in rails

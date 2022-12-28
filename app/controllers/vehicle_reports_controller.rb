@@ -24,14 +24,17 @@ class VehicleReportsController < ApplicationController
     @vehicle_report = VehicleReport.new(vehicle_report_params)
 
     respond_to do |format|
-      if @vehicle_report.save
-        format.html { redirect_to vehicle_report_url(@vehicle_report), notice: "Vehicle report was successfully created." }
-        format.json { render :show, status: :created, location: @vehicle_report }
+      if @vehicle_report.save && VehicleReportsImporter.new.import_inspection_reports(@vehicle_report).imported?
+
+        format.html { redirect_to vehicle_inspections_path }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @vehicle_report.errors, status: :unprocessable_entity }
+        # run cleanup to purge imported files and the created vehicle report
+        @vehicle_report.csv_reports.purge 
+        @vehicle_report.destroy
+        format.html { render :new }
       end
     end
+
   end
 
   # PATCH/PUT /vehicle_reports/1 or /vehicle_reports/1.json

@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: vehicle_inspections
+#
+#  id                   :bigint           not null, primary key
+#  vehicle_id           :string
+#  inspection_date      :date
+#  vehicle_org_id       :string
+#  org_name             :text
+#  inspection_period_id :string
+#  inspection_passed    :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#
+
+one:
+  vehicle_id: MyString
+  inspection_date: 2022-09-05
+  vehicle_org_id: MyString
+  org_name: MyText
+  inspection_period_id: MyString
+  inspection_passed: MyString
+
+two:
+  vehicle_id: MyString
+  inspection_date: 2022-09-05
+  vehicle_org_id: MyString
+  org_name: MyText
+  inspection_period_id: MyString
+  inspection_passed: MyString

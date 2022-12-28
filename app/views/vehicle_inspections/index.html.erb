@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Vehicle inspections</h1>
+
+<div id="vehicle_inspections">
+<table>
+  <tr>
+    <th>Vehicle ID</th>
+    <th>Inspection Date</th>
+    <th>Vehicle Organization</th>
+    <th>Organization name</th>
+    <th>Inspection Period ID</th>
+    <th>Inspection Passed</th>
+    <th>Actions</th>
+  </tr>
+  <% @vehicle_inspections.each do |vehicle_inspection| %>
+    <tr>
+      <td><%= vehicle_inspection.vehicle_id %></td>
+      <td><%= vehicle_inspection.inspection_date %></td>
+      <td><%= vehicle_inspection.vehicle_org_id %></td>
+      <td><%= vehicle_inspection.org_name %></td>
+      <td><%= vehicle_inspection.inspection_period_id %></td>
+      <td><%= vehicle_inspection.inspection_passed %></td>
+      <td><%= link_to "Show this vehicle inspection", vehicle_inspection %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
+
+

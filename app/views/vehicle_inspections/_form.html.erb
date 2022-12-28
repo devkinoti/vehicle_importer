@@ -1,0 +1,47 @@
+<%= form_with(model: vehicle_inspection) do |form| %>
+  <% if vehicle_inspection.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(vehicle_inspection.errors.count, "error") %> prohibited this vehicle_inspection from being saved:</h2>
+
+      <ul>
+        <% vehicle_inspection.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :vehicle_id, style: "display: block" %>
+    <%= form.text_field :vehicle_id %>
+  </div>
+
+  <div>
+    <%= form.label :inspection_date, style: "display: block" %>
+    <%= form.date_field :inspection_date %>
+  </div>
+
+  <div>
+    <%= form.label :vehicle_org_id, style: "display: block" %>
+    <%= form.text_field :vehicle_org_id %>
+  </div>
+
+  <div>
+    <%= form.label :org_name, style: "display: block" %>
+    <%= form.text_area :org_name %>
+  </div>
+
+  <div>
+    <%= form.label :inspection_period_id, style: "display: block" %>
+    <%= form.text_field :inspection_period_id %>
+  </div>
+
+  <div>
+    <%= form.label :inspection_passed, style: "display: block" %>
+    <%= form.text_field :inspection_passed %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
