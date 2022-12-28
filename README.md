@@ -1,28 +1,12 @@
-# README
+# Importing using services - Code exploration and experimentation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
+* This is a solution for https://homework.adhoc.team/virs_pipeline/ using rails
 
-* Ruby version
+* Exploring how to import large files into a rails application
+  using active storage and postgresql copy.
 
-* System dependencies
+* The importing code is setup as a service in services/vehicle_reports_importer.rb
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-to do
-compound primary key vehicle_id + inspection_date - change in rails
+* This is not production level code but experimental code.
